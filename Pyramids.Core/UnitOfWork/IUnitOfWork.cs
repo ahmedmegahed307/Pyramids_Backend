@@ -31,7 +31,7 @@ namespace Pyramids.Core.UnitOfWork
         IJobActionStatusRepository JobActionStatusRepository { get; }
         IJobActionRepository JobActionRepository { get; }
         INotificationRepository NotificationRepository { get; }
-        IPartRepository PartRepository { get; }
+        IJobPartRepository JobPartRepository { get; }
 
         //reports
         IReportRepository ReportRepository { get; }

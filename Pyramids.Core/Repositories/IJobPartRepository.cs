@@ -7,7 +7,7 @@ using Pyramids.Core.Models;
 
 namespace Pyramids.Core.Repositories
 {
-    public interface IPartRepository : IGenericRepository<JobPart>
+    public interface IJobPartRepository : IGenericRepository<JobPart>
     {
     }
 }
