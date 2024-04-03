@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramids.API", "Pyramids.API\Pyramids.API.csproj", "{BE2CCF41-9675-43A8-8AC6-D8431146ED9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramids.Data", "Pyramids.Data\Pyramids.Data.csproj", "{3B702DA3-13A1-4D0E-8DE8-E5D2891D3E24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramids.Core", "Pyramids.Core\Pyramids.Core.csproj", "{A3C3E9E1-C721-478D-933A-E7B8E6585660}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramids.Services", "Pyramids.Services\Pyramids.Services.csproj", "{FE0A65C2-6304-4A6F-95D8-F78170009034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramids.Shared", "Pyramids.Shared\Pyramids.Shared.csproj", "{E1E20F8B-9C86-452E-986A-F72097F063E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pyramids.Test", "Pyramids.Test\Pyramids.Test.csproj", "{06B297C9-4904-4B6C-9F56-2DA794F54037}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE2CCF41-9675-43A8-8AC6-D8431146ED9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2CCF41-9675-43A8-8AC6-D8431146ED9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2CCF41-9675-43A8-8AC6-D8431146ED9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2CCF41-9675-43A8-8AC6-D8431146ED9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B702DA3-13A1-4D0E-8DE8-E5D2891D3E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B702DA3-13A1-4D0E-8DE8-E5D2891D3E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B702DA3-13A1-4D0E-8DE8-E5D2891D3E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B702DA3-13A1-4D0E-8DE8-E5D2891D3E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3C3E9E1-C721-478D-933A-E7B8E6585660}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C3E9E1-C721-478D-933A-E7B8E6585660}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C3E9E1-C721-478D-933A-E7B8E6585660}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C3E9E1-C721-478D-933A-E7B8E6585660}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE0A65C2-6304-4A6F-95D8-F78170009034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE0A65C2-6304-4A6F-95D8-F78170009034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE0A65C2-6304-4A6F-95D8-F78170009034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE0A65C2-6304-4A6F-95D8-F78170009034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1E20F8B-9C86-452E-986A-F72097F063E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E20F8B-9C86-452E-986A-F72097F063E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E20F8B-9C86-452E-986A-F72097F063E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E20F8B-9C86-452E-986A-F72097F063E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06B297C9-4904-4B6C-9F56-2DA794F54037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06B297C9-4904-4B6C-9F56-2DA794F54037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06B297C9-4904-4B6C-9F56-2DA794F54037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06B297C9-4904-4B6C-9F56-2DA794F54037}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EF7E7A7-E27C-4B8E-BD78-6F301BA43AB2}
+	EndGlobalSection
+EndGlobal
