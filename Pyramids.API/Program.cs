@@ -141,15 +141,8 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors();
 
-app.UseAuthentication();
-app.UseAuthorization();
-
 app.MapControllers();
 
-//app.UseDefaultFiles();
 
-//app.UseStaticFiles();
-
-//app.UseRouting();
 
 app.Run();
