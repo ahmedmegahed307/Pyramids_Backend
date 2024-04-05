@@ -106,7 +106,7 @@ builder.Services.AddSwaggerGen(c =>
             new OpenApiContact
             {
                 Name = "Pyramids",
-                Email = "ahmedmegahed307@gmail.com",
+                Email = "pyramids@gmail.com",
             },
         Description = "Pyramids is a Field Service Software",
     });
@@ -123,7 +123,6 @@ var dbConnection = builder.Configuration.GetConnectionString("DbConnection");
 
 
 builder.Services.Configure<ApiBehaviorOptions>(options => { options.SuppressModelStateInvalidFilter = true; });
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
