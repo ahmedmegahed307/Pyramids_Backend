@@ -83,8 +83,8 @@ namespace Pyramids.API.DTOs.Job
     }
     public class JobStatusDto : EntityBaseDto
     {
-        public string StatusCode { get; set; }
-        public string Status { get; set; }
+        public string Name { get; set; }
+        public char Code { get; set; }
     }
     public class JobJobIssueDto : EntityBaseDto
     {

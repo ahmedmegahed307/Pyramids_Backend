@@ -23,13 +23,12 @@ namespace Pyramids.API.Controllers
         private readonly IJobIssueService _issueService;
         private readonly IJobPartService _partService;
         private readonly IJobSessionService _jobSessionService;
-        private readonly IBlobService _blobService;
         private readonly IJobAttachmentService _jobAttachmentService;
         public JobController(IJobService jobService, IMapper mapper,
             IJobIssueService issueService,
             IJobPartService partService,
             IJobSessionService jobSessionService,
-            IBlobService blobService,
+          
             IJobAttachmentService jobAttachmentService)
             : base(jobService, mapper)
         {
@@ -37,7 +36,6 @@ namespace Pyramids.API.Controllers
             _issueService = issueService;
             _partService = partService;
             _jobSessionService = jobSessionService;
-            _blobService = blobService;
             _jobAttachmentService = jobAttachmentService;
             _mapper = mapper;
         }
@@ -96,28 +94,7 @@ namespace Pyramids.API.Controllers
 
 
 
-            if (jobCreateDto.FilesToUpload != null && jobCreateDto.FilesToUpload.Count > 0)
-            {
-                foreach (var file in jobCreateDto.FilesToUpload)
-                {
-                    string blobName = await _blobService.UploadFileAsync(file);
-
-                    if (!string.IsNullOrEmpty(blobName))
-                    {
-                        await _jobAttachmentService.AddAsync(new JobAttachment
-                        {
-                            JobId = createdJob.Id,
-                            CreatedAt = DateTime.Now,
-                            FileName = blobName,
-                            FileType = "",
-                            FileURL = "",
-                            CreatedByUserId = 2,
-                            IsActive = true,
-                            IsDeleted = false
-                        });
-                    }
-                }
-            }
+           
 
             var responseDataDto = new ResponseDataDto
             {
@@ -135,7 +112,7 @@ namespace Pyramids.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAll(bool? isActive = null, int? companyId = null)
         {
-            IEnumerable<Job> JobsList = await _jobService.GetAllAsync(isActive, companyId, "JobStatus,Site,JobPriority,Client,Engineer,JobType,JobSubType");
+            IEnumerable<Job> JobsList = await _jobService.GetAllAsync(isActive, companyId, "JobStatus,Site,Priority,Client,Engineer,JobType,JobSubType");
 
             var data = _mapper.Map<IEnumerable<JobDto>>(JobsList);
 
@@ -158,7 +135,7 @@ namespace Pyramids.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public override async Task<IActionResult> GetById(int id)
         {
-            Job job = await _jobService.GetByIdAsync(id, "JobStatus,JobPriority,Client,Contact,Site,Engineer,JobType,JobSubType,JobParts.Product,JobActions.JobActionType,JobActions.CreatedByUser,JobIssues.Asset,JobAttachments");
+            Job job = await _jobService.GetByIdAsync(id, "JobStatus,Priority,Client,Contact,Site,Engineer,JobType,JobSubType,JobParts.Product,JobActions.JobActionType,JobActions.CreatedByUser,JobIssues.Asset,JobAttachments");
 
             if (job == null)
             {
@@ -310,8 +287,8 @@ namespace Pyramids.API.Controllers
                 JobDate = job.JobDate,
                 JobStatus = new JobStatusDto
                 {
-                    StatusCode = job.JobStatus.Name,
-                    Status = job.JobStatus.Name
+                    Name = job.JobStatus.Name,
+                    Code = job.JobStatus.Code
                 },
                 JobType = new JobJobTypeDto
                 {

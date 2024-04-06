@@ -9,11 +9,11 @@ namespace Pyramids.Core.Enums
     public enum JobStatusEnum
     {
         NONE,
-        OPEN=1,
-        ASSIGNED=2,
-        PENDING=3,
-        RESOLVED=4,
-        CANCELLED=5,
-        CLOSED=7
+        OPEN=3,
+        ASSIGNED=1,
+        PENDING=4,
+        RESOLVED=5,
+        CANCELLED=6,
+        CLOSED=2
     }
 }

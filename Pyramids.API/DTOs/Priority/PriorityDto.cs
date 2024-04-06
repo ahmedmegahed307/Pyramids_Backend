@@ -4,6 +4,7 @@ namespace Pyramids.API.DTOs.Priority
 {
     public class PriorityDto : EntityBaseDto
     {
-        public string Priority { get; set; }
+         public required string Code { get; set; }
+        public required string Name { get; set; }
     }
 }

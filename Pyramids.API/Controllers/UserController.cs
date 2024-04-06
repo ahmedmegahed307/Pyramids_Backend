@@ -15,12 +15,11 @@ namespace Pyramids.API.Controllers
     public class UserController : BaseController<User, UserDto,UserCreateDto,UserUpdateDto>
     {
         private readonly IUserService _userService;
-        private readonly IBlobService _blobService;
-        public UserController(IUserService userService, IMapper mapper, IBlobService blobService)
+        public UserController(IUserService userService, IMapper mapper)
             : base(userService, mapper)
         {
             _userService = userService;
-            _blobService = blobService;
+           
         }
 
 
@@ -107,43 +106,6 @@ namespace Pyramids.API.Controllers
         }
 
 
-        [HttpPut("{userId}/UploadPhoto")]
-        [Consumes("multipart/form-data")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<IActionResult> UploadPhoto(int userId, [FromForm] UserPhotoDto photoDto)
-        {
-
-            if (photoDto != null)
-            {
-                string blobName = await _blobService.UploadFileAsync(photoDto.UserPhoto);
-
-                if (!string.IsNullOrEmpty(blobName))
-                {
-
-                    var userPhoto = await _userService.UpdatePhoto(userId, blobName);
-                    return Execute(new ResponseDataDto
-                    {
-                        Code = HttpStatusCode.OK,
-                        Message = "Successful",
-                        Data = userPhoto,
-                    });
-
-                }
-                return Execute(new ResponseDataDto
-                {
-                    Code = HttpStatusCode.Created,
-                    Message = "Successful"
-                });
-            }
-
-            return Execute(new ResponseDataDto
-            {
-                Code = HttpStatusCode.BadRequest,
-                Message = "Failed"
-            });
-        }
         private CurrentUser GetCurrentUser()
         {
             try
